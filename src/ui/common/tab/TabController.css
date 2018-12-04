@@ -1,0 +1,78 @@
+.main-frame {
+  display: flex;
+  flex-direction: row;
+}
+.tab-title-list{
+    width: 250px;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+.tab_title_header {
+  display: flex;
+  flex-direction: row;
+}
+
+.header_avatar {
+  height: 80px;
+  width: 80px;
+}
+.header_info {
+    margin-left: 10px;
+}
+
+.header_name {
+  margin: 10px;
+}
+
+.btn{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    font-size: 10px;
+    background-color: grey;
+    border-radius: 3px;
+}
+.header_auth{
+}
+
+.header_brand{
+    margin-left: 10px;
+    background-color: green;
+}
+.header-line{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    background-color: grey;
+}
+.tab-title{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.tab-title img{
+    margin-left: 20px;
+    height: 30px;
+    width: 30px;
+}
+.tab-title span{
+    margin-left: 10px;
+}
+.active{
+    background-color:#F7F7F7;
+}
+.tab-content-list{
+    padding: 50px;
+    width: 100%;
+}
+.tab-content{
+    display: none;
+}
+.show{
+    display: block;
+}
+
