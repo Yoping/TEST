@@ -36,3 +36,11 @@
 .search-btn {
   margin-left: 10px;
 }
+.choice-line{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.dropmenu{
+  margin-right: 10px;
+}

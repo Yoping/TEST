@@ -1,0 +1,15 @@
+.btn{
+    padding: 5px;
+    color: white;
+    background-color: grey;
+    border-radius: 5px;
+}
+.btnPink{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background-color: #E74C75;
+    border-radius: 5px;
+}

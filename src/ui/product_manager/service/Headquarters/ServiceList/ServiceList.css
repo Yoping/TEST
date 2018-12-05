@@ -1,0 +1,15 @@
+.service-name-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.service-img{
+    height: 40px;
+    width: 50px;
+}
+.service-info{
+    margin-left: 10px;
+}
+.btnOperate{
+    width: 50px;
+}

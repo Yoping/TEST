@@ -23,32 +23,21 @@ class DropMenu extends Component {
   constructor(props) {
     super();
     this.state = {
-      data: {
-        type: "",
-        typelist: []
-      },
-      selectType: "",
+      data: props.typelist,
+      selectType: "所有"+props.typelist.type,
       selectId: -1
     };
   }
-  componentDidMount() {
-    this.setState({
-      data: mydata,
-      selectType: "所有" + mydata.type,
-      isListShow:false
-    });
-  }
   render() {
-    const style=this.state.isListShow?"drop-menu-list list-show":"drop-menu-list list-hide";
     return (
       <div className="drop-menu">
         <div className="drop-menu-type">选择{this.state.data.type}:</div>
-        <div>
-          <div className="drop-menu-choice" onClick={()=>{this.changeStyle()}}>
-            {this.state.selectType}{this.state.selectId}
+        <div className="drop-menu-div">
+          <div className="drop-menu-choice" >
+            {this.state.selectType}
             <img src="https://img.yzcdn.cn/upload_files/2017/04/06/FkzPke7UiK-QgqA0_KFby82u6KV7.png" />
           </div>
-          <div className={style}>
+          <div className="drop-menu-list">
             {this.state.data.typelist.map((item, index) => {
               return (
                 <div
@@ -70,15 +59,8 @@ class DropMenu extends Component {
     this.setState({
       selectType: selectType,
       selectId: selectId,
-      isListShow:false,
     });
   };
-  changeStyle(){
-    this.setState({
-      isListShow:!this.state.isListShow,
-    })
-    console.log("isShow:"+this.state.isListShow);
-  }
 }
 
 export default DropMenu;

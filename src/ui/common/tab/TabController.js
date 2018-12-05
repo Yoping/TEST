@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./TabController.css";
 
-function mapStateToProps(state) {
-  return {};
-}
 
 class TabController extends Component {
   constructor() {
