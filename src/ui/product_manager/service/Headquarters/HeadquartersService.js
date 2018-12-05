@@ -3,6 +3,27 @@ import "./HeadquartersService.css";
 import DropMenu from "../../../common/widget/dropmenu2/DropMenu";
 import ServiceList from "./ServiceList/ServiceList";
 import AddProduct from "./AddProduct/AddProduct";
+import SearchBoard from "../../../common/widget/searchBoard/SearchBoard"
+
+const shopListData = {
+  type: "门店",
+  typelist: [
+    {
+      id: 1,
+      typename: "木屋烧烤"
+    },
+    {
+      id: 2,
+      typename: "叫只鸭子"
+    },
+    {
+      id: 3,
+      typename: "搞只鸡"
+    }
+  ]
+};
+
+
 const stateListData = {
   type: "状态",
   typelist: [
@@ -58,32 +79,52 @@ const signListData = {
 };
 
 class HeadquartersService extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      visible: false,
+      //是否为总部服务（或门店服务）
+      isHeadquarters:props.isHeadquarters,
+
+      // 显示哪个界面：0表示默认服务列表，1表示添加服务
+      showViewIndex: 0,
+      
+      shopList: shopListData,
       stateList: stateListData,
       typeList: typeListData,
       signList: signListData
     };
+    
   }
   render() {
+    var hServiceDivStyle = "h-service-div";
+    var hServiceAddService = "h-service-add-service";
+    switch (this.state.showViewIndex) {
+      case 0:
+        hServiceDivStyle = hServiceDivStyle + " show";
+        hServiceAddService = hServiceAddService + " hide";
+        break;
+      case 1:
+        hServiceDivStyle = hServiceDivStyle + " hide";
+        hServiceAddService = hServiceAddService + " show";
+        break;
+    }
+
+    console.log("isHeadquarters:" + this.state.isHeadquarters);
+ 
     return (
-        <div >
+      <div>
+        <div className={hServiceDivStyle}>
           <div className="action-line">
-            <div className="action-type">
-              <span className="action">添加服务</span>
-              <span className="action">批量操作</span>
-              <span className="action">管理分类</span>
-              <span className="action">管理标签</span>
+            <div className={this.state.isHeadquarters?"action-type show":"action-type hide"}>
+              <span className="btnGrey" onClick={this.showAddServiceView}>添加服务</span>
+              <span className="btnGrey">批量操作</span>
+              <span className="btnGrey">管理分类</span>
+              <span className="btnGrey">管理标签</span>
             </div>
-            <div className="search-div">
-              <div className="search-board">
-                <img src="https://img.yzcdn.cn/upload_files/2017/04/06/FkzPke7UiK-QgqA0_KFby82u6KV7.png" />
-                <input type="textt" defaultValue="请输入名称或者条形码" />
-              </div>
-              <div className="search-btn action">搜索</div>
+            <div className={this.state.isHeadquarters?"dropmenu hide":"dropmenu show"}>
+              <DropMenu typelist={this.state.shopList} />
             </div>
+            <SearchBoard></SearchBoard>
           </div>
           <div className="choice-line">
             <div className="dropmenu">
@@ -96,16 +137,21 @@ class HeadquartersService extends Component {
               <DropMenu typelist={this.state.signList} />
             </div>
           </div>
-          <div>
-            <ServiceList />
-          </div>
-          <AddProduct></AddProduct>
+          <ServiceList />
         </div>
-      
+        <div className={hServiceAddService}>
+          {/* <AddProduct /> */}
+        </div>
+      </div>
     );
   }
 
-  showAddServiceView() {}
+  showAddServiceView=()=> {
+    this.setState({
+      showViewIndex:1
+    });
+    console.log("showViewIndex="+this.state.showViewIndex);
+  }
 }
 
 export default HeadquartersService;

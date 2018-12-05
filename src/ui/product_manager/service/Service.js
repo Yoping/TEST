@@ -19,11 +19,11 @@ class Service extends Component {
           type="card"
           className="service-tab"
         >
-          <TabPane tab="总店服务" key="1">
-            <HeadquartersService />
+          <TabPane tab={this.props.isService?"总店服务":"总店产品"} key="1">
+            <HeadquartersService isHeadquarters={true}/>
           </TabPane>
-          <TabPane tab="门店服务" key="2">
-            门店服务
+          <TabPane tab={this.props.isService?"门店服务":"门店产品"}  key="2" >
+            <HeadquartersService isHeadquarters={false}/>
           </TabPane>
         </Tabs>
       </div>

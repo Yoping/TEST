@@ -1,0 +1,27 @@
+.search-board {
+  height: 28px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+}
+.search-div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border: solid 1px grey;
+  width: 200px;
+}
+.search-div img {
+  margin-left: 4px;
+  height: 16px;
+  width: 16px;
+}
+.search-div input {
+  font-size: 12px;
+  margin-left: 2px;
+  border: none;
+}
+.search-btn {
+  margin-left: 10px;
+  padding-top: 2px;
+}

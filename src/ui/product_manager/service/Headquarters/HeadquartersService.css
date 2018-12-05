@@ -1,40 +1,15 @@
-.action {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 2px;
-  border: solid 1px grey;
-  margin-right: 5px;
+.h-service-div{
+  
+}
+.h-service-add-service{
+  float: left;
 }
 .action-line {
+  height: 70px;
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
-}
-.search-div {
-  height: 30px;
-  width: 300px;
-  display: flex;
-  flex-direction: row;
-}
-.search-board {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  border: solid 1px orange;
-  width: 200px;
-}
-.search-div img {
-  height: 16px;
-  width: 16px;
-}
-.search-div input {
-  border: none;
-}
-.search-btn {
-  margin-left: 10px;
 }
 .choice-line{
   display: flex;
@@ -44,3 +19,11 @@
 .dropmenu{
   margin-right: 10px;
 }
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+
+

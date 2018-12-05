@@ -60,6 +60,7 @@
 }
 .active{
     background-color:#F7F7F7;
+    color:#1890FF;
 }
 .tab-content-list{
     padding-left: 30px;

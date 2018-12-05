@@ -23,7 +23,11 @@
   justify-content: space-between;
 }
 
-
+.drop-menu-div{
+  height: 30px;
+  align-items: center;
+  display: flex;
+}
 .drop-menu-div:hover .drop-menu-list {
   display: block;
   position: absolute;
