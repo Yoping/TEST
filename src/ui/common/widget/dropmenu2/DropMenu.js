@@ -25,7 +25,8 @@ class DropMenu extends Component {
     this.state = {
       data: props.typelist,
       selectType: "所有"+props.typelist.type,
-      selectId: -1
+      selectId: -1,
+      isShow:false,
     };
   }
   render() {
@@ -37,7 +38,7 @@ class DropMenu extends Component {
             {this.state.selectType}
             <img src="https://img.yzcdn.cn/upload_files/2017/04/06/FkzPke7UiK-QgqA0_KFby82u6KV7.png" />
           </div>
-          <div className="drop-menu-list">
+          <div className={this.state.isShow?"drop-menu-list show":"drop-menu-list hide"}>
             {this.state.data.typelist.map((item, index) => {
               return (
                 <div
@@ -59,6 +60,7 @@ class DropMenu extends Component {
     this.setState({
       selectType: selectType,
       selectId: selectId,
+      isShow:false,
     });
   };
 }

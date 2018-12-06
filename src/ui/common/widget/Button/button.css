@@ -19,6 +19,16 @@
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 2px;
+    background-color: grey;
+    margin-right: 5px;
+  }
+
+  .btnGreyRound {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2px;
     border: solid 1px grey;
     margin-right: 5px;
   }

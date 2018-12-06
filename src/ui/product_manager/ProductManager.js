@@ -4,6 +4,7 @@ import "./ProductManger.css";
 import "./service/Headquarters/HeadquartersService";
 import HeadquartersService from "./service/Headquarters/HeadquartersService";
 import Service from "./service/Service";
+import Card from "./card/Card";
 import { Tabs } from "antd";
 
 const TabPane = Tabs.TabPane;
@@ -35,13 +36,10 @@ class ProductManager extends React.Component {
           <Service isService={true} />
         </TabPane>
         <TabPane tab="卡项" key="2">
-          卡项
+          <Card />
         </TabPane>
         <TabPane tab="产品" key="3">
-        <br/>
-          <div>
-            <Service isService={false} className="test"/>
-          </div>
+          <Service isService={false} className="test" />
         </TabPane>
         <TabPane tab="库存" key="4">
           库存

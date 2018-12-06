@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Table, Divider, Tag } from "antd";
-import "./ServiceList.css"
+import "./CardList.css"
 import "../../../../common/widget/button/button.css"
 
 const columns = [
   {
-    title: "服务",
+    title: "卡项",
     dataIndex: "serviceName",
     key: "serviceName",
     render: serviceType => (
@@ -19,22 +19,22 @@ const columns = [
     )
   },
   {
-    title: "分类",
+    title: "有效期",
     dataIndex: "type",
     key: "type"
   },
   {
-    title: "标签",
+    title: "网店售卡",
     dataIndex: "sign",
     key: "sign"
   },
   {
-    title: "服务时长",
+    title: "总销量",
     dataIndex: "time",
     key: "time"
   },
   {
-    title: "网店排序",
+    title: "状态",
     dataIndex: "sort",
     key: "sort"
   },

@@ -1,6 +1,7 @@
 .drop-menu {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 .drop-menu img {
   height: 10px;
@@ -30,16 +31,17 @@
 }
 .drop-menu-div:hover .drop-menu-list {
   display: block;
-  position: absolute;
-  width: 200px;
-  z-index: 10;
 }
 
 .drop-menu-list {
+  width: 200px;
+  z-index: 10;
   display: none;
   border: 1px solid #f8f8f8;
   box-shadow: 2px 2px 2px grey;
   background: white;
+  position: absolute;
+  top: 30px;
 }
 .drop-menu-item {
   border-radius: 2px;
@@ -53,7 +55,12 @@
   background-color: grey;
   color: pink;
 }
-
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
 /* .list-show{
   display: block;
 }

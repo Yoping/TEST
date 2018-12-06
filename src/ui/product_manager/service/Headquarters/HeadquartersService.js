@@ -96,6 +96,7 @@ class HeadquartersService extends Component {
     
   }
   render() {
+    //控制显示哪个面板：0服务列表 1添加服务面板
     var hServiceDivStyle = "h-service-div";
     var hServiceAddService = "h-service-add-service";
     switch (this.state.showViewIndex) {
@@ -116,10 +117,10 @@ class HeadquartersService extends Component {
         <div className={hServiceDivStyle}>
           <div className="action-line">
             <div className={this.state.isHeadquarters?"action-type show":"action-type hide"}>
-              <span className="btnGrey" onClick={this.showAddServiceView}>添加服务</span>
-              <span className="btnGrey">批量操作</span>
-              <span className="btnGrey">管理分类</span>
-              <span className="btnGrey">管理标签</span>
+              <span className="btnGreyRound" onClick={this.showAddServiceView}>添加服务</span>
+              <span className="btnGreyRound">批量操作</span>
+              <span className="btnGreyRound">管理分类</span>
+              <span className="btnGreyRound">管理标签</span>
             </div>
             <div className={this.state.isHeadquarters?"dropmenu hide":"dropmenu show"}>
               <DropMenu typelist={this.state.shopList} />
