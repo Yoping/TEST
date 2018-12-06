@@ -1,47 +1,46 @@
 import React, { Component } from "react";
 import { Table, Divider, Tag } from "antd";
-import "./CardList.css"
-import "../../../../common/widget/button/button.css"
+import "./CardList.css";
+import "../../../../common/widget/button/button.css";
 
 const columns = [
   {
     title: "卡项",
-    dataIndex: "serviceName",
-    key: "serviceName",
-    render: serviceType => (
-      <div className="service-name-div">
-        <img className="service-img" src="https://img.yzcdn.cn/upload_files/2018/12/03/Fq9u8mRnPIuAlq1LsfmiUFb6R9jD.jpg" />
-        <div  className="service-info" >
-            <div className="service-name">洗头</div>
-            <div className="service-price">￥250</div>
+    dataIndex: "cardName",
+    key: "cardName",
+    render: (text, record) => (
+      <div className="card-name-div">
+        <img
+          className="card-type-img"
+          // src={require("../../../../../img/logo/card_recharge.png")}
+          src={(() => {
+            switch (record.cardType) {
+              case 1:
+                return require("../../../../../img/logo/card_sub.png");
+              case 2:
+                return require("../../../../../img/logo/card_discount.png");
+              case 3:
+                return require("../../../../../img/logo/card_recharge.png");
+            }
+          })()}
+        />
+        <div className="card-info">
+          <div className="card-name">{record.cardName}</div>
+          <div className="card-price">￥{record.price}</div>
         </div>
       </div>
     )
   },
   {
     title: "有效期",
-    dataIndex: "type",
-    key: "type"
+    dataIndex: "validityTime",
+    key: "validityTime"
   },
   {
     title: "网店售卡",
-    dataIndex: "sign",
-    key: "sign"
-  },
-  {
-    title: "总销量",
-    dataIndex: "time",
-    key: "time"
-  },
-  {
-    title: "状态",
-    dataIndex: "sort",
-    key: "sort"
-  },
-  {
-    title: "在售门店",
-    dataIndex: "shopSale",
-    key: "shopSale"
+    dataIndex: "canSaleOnNet",
+    key: "canSaleOnNet",
+    render: canSaleOnNet => <div>{canSaleOnNet ? "支持" : "不支持"}</div>
   },
   {
     title: "总销量",
@@ -49,163 +48,147 @@ const columns = [
     key: "totalSales"
   },
   {
+    title: "状态",
+    dataIndex: "state",
+    key: "state",
+    render: state => (
+      <div>
+        {state==1?"已上架":"未上架"}
+      </div>
+    )
+  },
+  {
     title: "操作",
     key: "operate",
     dataIndex: "operate",
-    render: operate => (
-      <div className="btnOperate btnPink">编辑</div>
-    )
+    render: operate => <div className="btnOperate btnPink">编辑</div>
   }
 ];
 
 const data = [
   {
     key: "1",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
+    cardName: "贵宾卡",
+    cardType: 1,
+    price: 999,
+    giveNum: 10,
+    validityTime: "永久有效",
+    canSaleOnNet: true,
+    time: "60分钟",
+    totalSales: 369,
+    state: 1
   },
   {
     key: "2",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
+    cardName: "圣诞卡",
+    cardType: 2,
+    price: 129,
+    giveNum: 10,
+    validityTime: "永久有效",
+    canSaleOnNet: false,
+    time: "60分钟",
+    totalSales: 66,
+    state: 2
   },
   {
     key: "3",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
+    cardName: "牛逼卡",
+    cardType: 1,
+    price: 229,
+    giveNum: 10,
+    validityTime: "永久有效",
+    canSaleOnNet: true,
+    time: "60分钟",
+    totalSales: 66,
+    state: 2
   },
   {
     key: "4",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
+    cardName: "圣诞卡",
+    cardType: 3,
+    price: 269,
+    giveNum: 10,
+    validityTime: "30天",
+    canSaleOnNet: false,
+    time: "60分钟",
+    totalSales: 256,
+    state: 1
   },
   {
     key: "5",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
+    cardName: "元旦卡",
+    cardType: 1,
+    price: 669,
+    giveNum: 10,
+    validityTime: "永久有效",
+    canSaleOnNet: false,
+    time: "60分钟",
+    totalSales: 66,
+    state: 2
   },
   {
     key: "6",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
+    cardName: "新年快乐卡",
+    cardType: 2,
+    price: 229,
+    giveNum: 10,
+    validityTime: "永久有效",
+    canSaleOnNet: true,
+    time: "60分钟",
+    totalSales: 99,
+    state: 1
   },
   {
     key: "7",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
+    cardName: "圣诞卡",
+    cardType: 1,
+    price: 229,
+    giveNum: 10,
+    validityTime: "60天",
+    canSaleOnNet: true,
+    time: "60分钟",
+    totalSales: 66,
+    state: 1
   },
   {
     key: "8",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
-  },
-  {
-    key: "9",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
-  },
-  {
-    key: "10",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
-  },
-  {
-    key: "11",
-    image:"",
-    serviceName:"洗脚",
-    price:"299",
-    type: "高级服务",
-    sign:"很贵",
-    time:"60分钟",
-    sort:0,
-    shopSale:0,
-    totalSales:99
-  },
+    cardName: "圣诞卡",
+    cardType: 1,
+    price: 229,
+    giveNum: 10,
+    validityTime: "永久有效",
+    canSaleOnNet: true,
+    time: "60分钟",
+    totalSales: 66,
+    state: 1
+  }
 ];
 // rowSelection object indicates the need for row selection
 const rowSelection = {
-    onChange: (selectedRowKeys, selectedRows) => {
-      console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-    },
-    getCheckboxProps: record => ({
-      disabled: record.name === 'Disabled User', // Column configuration not to be checked
-      name: record.name,
-    }),
-  };
+  onChange: (selectedRowKeys, selectedRows) => {
+    console.log(
+      `selectedRowKeys: ${selectedRowKeys}`,
+      "selectedRows: ",
+      selectedRows
+    );
+  },
+  getCheckboxProps: record => ({
+    disabled: record.name === "Disabled User", // Column configuration not to be checked
+    name: record.name
+  })
+};
 
 class ServiceList extends Component {
   render() {
-    return <Table className="table" rowSelection={rowSelection} columns={columns} dataSource={data} pagination={true}/>;
+    return (
+      <Table
+        className="table"
+        rowSelection={rowSelection}
+        columns={columns}
+        dataSource={data}
+        pagination={true}
+      />
+    );
   }
 }
 

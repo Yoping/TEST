@@ -1,13 +1,13 @@
-.service-name-div{
+.card-name-div{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.service-img{
-    height: 40px;
-    width: 50px;
+.card-img{
+    height: 26px;
+    width: 40px;
 }
-.service-info{
+.card-info{
     margin-left: 10px;
 }
 .btnOperate{

@@ -1,34 +1,56 @@
-.btn{
-    padding: 5px;
-    color: white;
-    background-color: grey;
-    border-radius: 5px;
+.btn {
+  padding: 5px;
+  color: white;
+  background-color: grey;
+  border-radius: 5px;
 }
-.btnPink{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
-    background-color: #E74C75;
-    border-radius: 5px;
+.btnPink {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  background-color: #e74c75;
+  border-radius: 5px;
 }
 .btnGrey {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 2px;
-    background-color: grey;
-    margin-right: 5px;
-  }
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 2px;
+  background-color: grey;
+  margin-right: 5px;
+}
 
-  .btnGreyRound {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 2px;
-    border: solid 1px grey;
-    margin-right: 5px;
-  }
+.btnGreyRound {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 2px;
+  border: solid 1px grey;
+  margin-right: 5px;
+}
+
+.btnBlue {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 2px;
+  color: white;
+  background-color: #1890ff;
+  margin-right: 5px;
+}
+
+.btnBlueRound {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 2px;
+  border: solid 1px #1890ff;
+  color: #1890ff;
+  margin-right: 5px;
+}

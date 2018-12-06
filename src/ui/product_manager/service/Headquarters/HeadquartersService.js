@@ -110,17 +110,15 @@ class HeadquartersService extends Component {
         break;
     }
 
-    console.log("isHeadquarters:" + this.state.isHeadquarters);
- 
     return (
       <div>
         <div className={hServiceDivStyle}>
           <div className="action-line">
             <div className={this.state.isHeadquarters?"action-type show":"action-type hide"}>
-              <span className="btnGreyRound" onClick={this.showAddServiceView}>添加服务</span>
-              <span className="btnGreyRound">批量操作</span>
-              <span className="btnGreyRound">管理分类</span>
-              <span className="btnGreyRound">管理标签</span>
+              <span className="btnBlue" onClick={this.showAddServiceView}>添加服务</span>
+              <span className="btnBlueRound">批量操作</span>
+              <span className="btnBlueRound">管理分类</span>
+              <span className="btnBlueRound">管理标签</span>
             </div>
             <div className={this.state.isHeadquarters?"dropmenu hide":"dropmenu show"}>
               <DropMenu typelist={this.state.shopList} />
@@ -151,7 +149,6 @@ class HeadquartersService extends Component {
     this.setState({
       showViewIndex:1
     });
-    console.log("showViewIndex="+this.state.showViewIndex);
   }
 }
 

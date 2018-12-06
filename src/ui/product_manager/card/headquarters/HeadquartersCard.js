@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import "./HeadquartersCard.css";
 import DropMenu from "../../../common/widget/dropmenu2/DropMenu";
 import CardList from "./cardList/CardList"
 import SearchBoard from "../../../common/widget/searchBoard/SearchBoard"
 import "../../../common/widget/button/button.css"
-
+import "./HeadquartersCard.css";
 const cardListData = {
   type: "门店",
   typelist: [
@@ -54,7 +53,6 @@ class HeadquartersCard extends Component {
         break;
     }
 
-    console.log("isHeadquarters:" + this.state.isHeadquarters);
  
     return (
       <div>
@@ -63,7 +61,7 @@ class HeadquartersCard extends Component {
             <div className={this.state.isHeadquarters?"show":"hide"}>
               <span className="btnGreyRound" onClick={this.showAddServiceView}>添加卡项</span>
             </div>
-            <div className={this.state.isHeadquarters?"dropmenu-shop hide":"dropmenu-shop show"}>
+            <div className={this.state.isHeadquarters?"hide":"show"}>
               <DropMenu typelist={this.state.cardList} />
             </div>
             <SearchBoard></SearchBoard>
@@ -88,7 +86,6 @@ class HeadquartersCard extends Component {
     this.setState({
       showViewIndex:1
     });
-    console.log("showViewIndex="+this.state.showViewIndex);
   }
 }
 
