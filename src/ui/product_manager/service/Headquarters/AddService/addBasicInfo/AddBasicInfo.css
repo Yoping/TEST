@@ -1,0 +1,10 @@
+.add-ser-btn{
+    height: 50px;
+}
+.add-ser-input{
+    width: 400px;
+}
+.add-ser-item{
+    display: flex;
+    flex-direction: row;
+}

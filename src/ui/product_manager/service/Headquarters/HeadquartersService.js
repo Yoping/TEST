@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./HeadquartersService.css";
 import DropMenu from "../../../common/widget/dropmenu2/DropMenu";
 import ServiceList from "./ServiceList/ServiceList";
-import AddProduct from "./AddProduct/AddProduct";
 import SearchBoard from "../../../common/widget/searchBoard/SearchBoard"
+import AddService from "./AddService/AddService"
 
 const shopListData = {
   type: "门店",
@@ -139,7 +139,7 @@ class HeadquartersService extends Component {
           <ServiceList />
         </div>
         <div className={hServiceAddService}>
-          {/* <AddProduct /> */}
+          <AddService showServiceListView={this.showServiceListView}/>
         </div>
       </div>
     );
@@ -148,6 +148,11 @@ class HeadquartersService extends Component {
   showAddServiceView=()=> {
     this.setState({
       showViewIndex:1
+    });
+  }
+  showServiceListView=()=> {
+    this.setState({
+      showViewIndex:0
     });
   }
 }

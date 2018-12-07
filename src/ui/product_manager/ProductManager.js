@@ -32,20 +32,14 @@ class ProductManager extends React.Component {
         onChange={callback}
         className="product_manager_top_menu"
       >
-        <TabPane tab="服务" key="1" className="test">
+        <TabPane tab="服务" key="1">
           <Service isService={true} />
         </TabPane>
         <TabPane tab="卡项" key="2">
           <Card />
         </TabPane>
         <TabPane tab="产品" key="3">
-          <Service isService={false} className="test" />
-        </TabPane>
-        <TabPane tab="库存" key="4">
-          库存
-        </TabPane>
-        <TabPane tab="供应商" key="5">
-          供应商
+          <Service isService={false} />
         </TabPane>
       </Tabs>
     );

@@ -6,6 +6,7 @@ import "./service/Headquarters/HeadquartersService";
 import HeadquartersService from "./service/Headquarters/HeadquartersService";
 const TabPanel = Tabs.TabPanel;
 
+// 使用有赞的Tab切换组件
 class ProductManager extends React.Component {
   state = {
     activeId: "1"

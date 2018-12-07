@@ -1,0 +1,15 @@
+
+.add-ser-step{
+    width: 500px;
+    margin:50px;
+}
+.add-ser-btn{
+    height: 50px;
+    width: 100px;
+}
+.show{
+    display:block;
+}
+.hide{
+    display: none;
+}
